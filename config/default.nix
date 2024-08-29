@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   imports = [
     ./autocommands.nix
     ./keys.nix
@@ -10,7 +13,6 @@
     ./plug/colorscheme/colorscheme.nix
 
     ./plug/completion/cmp.nix
-    ./plug/completion/copilot-cmp.nix
     ./plug/completion/lspkind.nix
     ./plug/completion/schemastore.nix
 
@@ -37,7 +39,6 @@
     ./plug/treesitter/treesitter.nix
 
     ./plug/ui/alpha.nix
-    ./plug/ui/btw.nix
     ./plug/ui/bufferline.nix
     ./plug/ui/indent-blankline.nix
     ./plug/ui/noice.nix
@@ -48,7 +49,6 @@
     #./plug/utils/harpoon.nix
     ./plug/utils/comment.nix
     ./plug/utils/comment-box.nix
-    ./plug/utils/copilot.nix
     ./plug/utils/flash.nix
     ./plug/utils/grapple.nix
     ./plug/utils/hardtime.nix
@@ -82,7 +82,6 @@
     assistant = lib.mkOption {
       default = "none";
       type = lib.types.enum [
-        "copilot"
         "none"
       ];
     };

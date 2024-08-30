@@ -1,8 +1,5 @@
+{ config, lib, ... }:
 {
-  config,
-  lib,
-  ...
-}: {
   imports = [
     ./autocommands.nix
     ./keys.nix
@@ -82,7 +79,7 @@
     };
     assistant = lib.mkOption {
       default = "none";
-      type = lib.types.enum ["none"];
+      type = lib.types.enum [ "none" ];
     };
   };
   config = {

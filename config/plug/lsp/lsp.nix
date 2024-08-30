@@ -36,24 +36,6 @@
         yamlls = {
           enable = true;
         };
-        # rust-analyzer = {
-        #   enable = true;
-        #   installRustc = false;
-        #   installCargo = false;
-        #   settings = {
-        #     interpret.tests = true;
-        #     completion.fullFunctionSignatures.enable = true;
-        #     lens = {
-        #       implementations.enable = true;
-        #       references = {
-        #         method.enable = true;
-        #         adt.enable = true;
-        #         trait.enable = true;
-        #         enumVariant.enable = true;
-        #       };
-        #     };
-        #   };
-        # };
       };
       keymaps = {
         silent = true;
@@ -105,6 +87,29 @@
             desc = "Previous Diagnostic";
           };
         };
+      };
+    };
+    rustaceanvim.settings = {
+      server = {
+        cmd = [
+          "rustup"
+          "run"
+          "nightly"
+          "rust-analyzer"
+        ];
+        default_settings = {
+          rust-analyzer = {
+            check = {
+              command = "clippy";
+            };
+            inlayHints = {
+              lifetimeElisionHints = {
+                enable = "always";
+              };
+            };
+          };
+        };
+        standalone = false;
       };
     };
   };

@@ -16,6 +16,7 @@
       };
       formatting = {
         nixpkgs_fmt.enable = true;
+        rustfmt.enable = true;
         black = {
           enable = true;
           settings = ''

@@ -1,5 +1,8 @@
-{ config, lib, ... }:
 {
+  config,
+  lib,
+  ...
+}: {
   imports = [
     ./autocommands.nix
     ./keys.nix
@@ -59,6 +62,7 @@
     ./plug/utils/undotree.nix
     ./plug/utils/whichkey.nix
     ./plug/utils/yaml-companion.nix
+    ./plug/utils/rustaceanvim.nix
   ];
   options = {
     theme = lib.mkOption {
@@ -78,7 +82,7 @@
     };
     assistant = lib.mkOption {
       default = "none";
-      type = lib.types.enum [ "none" ];
+      type = lib.types.enum ["none"];
     };
   };
   config = {

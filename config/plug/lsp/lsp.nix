@@ -36,24 +36,24 @@
         yamlls = {
           enable = true;
         };
-        rust-analyzer = {
-          enable = true;
-          installRustc = false;
-          installCargo = false;
-          settings = {
-            interpret.tests = true;
-            completion.fullFunctionSignatures.enable = true;
-            lens = {
-              implementations.enable = true;
-              references = {
-                method.enable = true;
-                adt.enable = true;
-                trait.enable = true;
-                enumVariant.enable = true;
-              };
-            };
-          };
-        };
+        # rust-analyzer = {
+        #   enable = true;
+        #   installRustc = false;
+        #   installCargo = false;
+        #   settings = {
+        #     interpret.tests = true;
+        #     completion.fullFunctionSignatures.enable = true;
+        #     lens = {
+        #       implementations.enable = true;
+        #       references = {
+        #         method.enable = true;
+        #         adt.enable = true;
+        #         trait.enable = true;
+        #         enumVariant.enable = true;
+        #       };
+        #     };
+        #   };
+        # };
       };
       keymaps = {
         silent = true;

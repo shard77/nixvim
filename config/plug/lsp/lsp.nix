@@ -91,12 +91,6 @@
     };
     rustaceanvim.settings = {
       server = {
-        cmd = [
-          "rustup"
-          "run"
-          "nightly"
-          "rust-analyzer"
-        ];
         default_settings = {
           rust-analyzer = {
             check = {

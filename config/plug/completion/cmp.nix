@@ -67,80 +67,103 @@
     };
     cmp-nvim-lsp = {
       enable = true;
-    }; # lsp
+    };
     cmp-buffer = {
       enable = true;
     };
     cmp-path = {
       enable = true;
-    }; # file system paths
+    };
     cmp_luasnip = {
       enable = true;
-    }; # snippets
+    };
     cmp-cmdline = {
       enable = false;
-    }; # autocomplete for cmdline
+    };
   };
   extraConfigLua = ''
-          luasnip = require("luasnip")
-          kind_icons = {
-            Text = "󰊄",
-            Method = "",
-            Function = "󰡱",
-            Constructor = "",
-            Field = "",
-            Variable = "󱀍",
-            Class = "",
-            Interface = "",
-            Module = "󰕳",
-            Property = "",
-            Unit = "",
-            Value = "",
-            Enum = "",
-            Keyword = "",
-            Snippet = "",
-            Color = "",
-            File = "",
-            Reference = "",
-            Folder = "",
-            EnumMember = "",
-            Constant = "",
-            Struct = "",
-            Event = "",
-            Operator = "",
-            TypeParameter = "",
-          } 
+            luasnip = require("luasnip")
+            kind_icons = {
+              Text = "󰊄",
+              Method = "",
+              Function = "󰡱",
+              Constructor = "",
+              Field = "",
+              Variable = "󱀍",
+              Class = "",
+              Interface = "",
+              Module = "󰕳",
+              Property = "",
+              Unit = "",
+              Value = "",
+              Enum = "",
+              Keyword = "",
+              Snippet = "",
+              Color = "",
+              File = "",
+              Reference = "",
+              Folder = "",
+              EnumMember = "",
+              Constant = "",
+              Struct = "",
+              Event = "",
+              Operator = "",
+              TypeParameter = "",
+            }
 
-           local cmp = require'cmp'
+         local cmp = require'cmp'
 
-       -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-       cmp.setup.cmdline({'/', "?" }, {
-         sources = {
-           { name = 'buffer' }
-         }
-       })
-
-      -- Set configuration for specific filetype.
-       cmp.setup.filetype('gitcommit', {
-         sources = cmp.config.sources({
-           { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-         }, {
-           { name = 'buffer' },
+         cmp.setup.cmdline({'/', "?" }, {
+           sources = {
+             { name = 'buffer' }
+           }
          })
-       })
 
-       -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-       cmp.setup.cmdline(':', {
-         sources = cmp.config.sources({
-           { name = 'path' }
-         }, {
-           { name = 'cmdline' }
-         }),
-    --      formatting = {
-    --       format = function(_, vim_item)
-    --         vim_item.kind = cmdIcons[vim_item.kind] or "FOO"
-    --       return vim_item
-    --      end
-    -- }
-       })  '';
+         -- Set configuration for specific filetype.
+         cmp.setup.filetype('gitcommit', {
+           sources = cmp.config.sources({
+             { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+           }, {
+             { name = 'buffer' },
+           })
+         })
+
+    cmp.setup.sorting = {
+      comparators = {
+        cmp.config.compare.offset,
+        cmp.config.compare.exact,
+        cmp.config.compare.score,
+
+        function(entry1, entry2)
+          local _, entry1_under = entry1.completion_item.label:find "^_+"
+          local _, entry2_under = entry2.completion_item.label:find "^_+"
+          entry1_under = entry1_under or 0
+          entry2_under = entry2_under or 0
+          if entry1_under > entry2_under then
+            return false
+          elseif entry1_under < entry2_under then
+            return true
+          end
+        end,
+
+        cmp.config.compare.kind,
+        cmp.config.compare.sort_text,
+        cmp.config.compare.length,
+        cmp.config.compare.order,
+      },
+    },
+         -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+         cmp.setup.cmdline(':', {
+           sources = cmp.config.sources({
+             { name = 'path' }
+           }, {
+             { name = 'cmdline' }
+           }),
+      --      formatting = {
+      --       format = function(_, vim_item)
+      --         vim_item.kind = cmdIcons[vim_item.kind] or "FOO"
+      --       return vim_item
+      --      end
+      -- }
+         })  '';
 }

@@ -6,14 +6,6 @@
 
 My Neovim config using nixvim.
 
-<img src="assets/1.png" alt="nvim">
-
-<details>
-    <summary>More!</summary>
-    <img src="assets/2.png" alt="nvim">
-    <img src="assets/3.png" alt="nvim">
-</details>
-
 ## Configuring
 
 To start configuring, just add or modify the nix files in `./config`.
@@ -25,7 +17,6 @@ If you add a new configuration file, remember to add it to the
 - **[colorscheme/](../config/plug/colorscheme):** Theme configuration. Current one is [paradise](https://github.com/paradise-theme/paradise)
 - **[completion/](../config/plug/completion)**
   - **[nvim-cmp](../config/plug/completion/cmp.nix):** Completion plugin for nvim + emoji support
-  - **[copilot-cmp](../config/plug/completion/copilot-cmp.nix):** Completion support for GitHub copilot
   - **[lspkind](../config/plug/completion/lspkind.nix):** vscode-like pictograms for neovim lsp completion items
   - **[schemastore.nvim](../config/plug/completion/schemastore.nix):** Schemastore integration
 - **[git/](../config/plug/git)**
@@ -61,7 +52,6 @@ If you add a new configuration file, remember to add it to the
 - **[utils/](../config/plug/utils)**
   - **[comment](../config/plug/utils/comment.nix):** Quickly toggle comments
   - **[comment-box](../config/plug/utils/comment-box.nix):** Comments utilitiesdefaul
-  - **[CopilotChat](../config/plug/utils/copilot.nix):** Chat with copilot in nvim
   - **[flash](../config/plug/utils/flash.nix):** Navigate in file with a few keystrokes
   - **[grapple](../config/plug/utils/grapple.nix):** Quickly switch between buffers (Harpoon replacement)
   - **[hardtime](../config/plug/utils/hardtime.nix):** Learn vim motions, the hard way
@@ -90,7 +80,7 @@ If you have nix installed, you can directly run my config from anywhere
 You can try running mine with:
 
 ```shell
-nix run 'github:elythh/nixvim'
+nix run 'github:shard77/nixvim'
 ```
 
 ## Installing into NixOS configuration
@@ -104,7 +94,7 @@ You can add my `nixvim` configuration as an input to your `NixOS` configuration 
 ```nix
 {
  inputs = {
-    nixvim.url = "github:elythh/nixvim";
+    nixvim.url = "github:shard77/nixvim";
  };
 }
 ```
@@ -150,7 +140,7 @@ configuration (`home.packges = with pkgs; [ neovim ]`), but you replace
 ### Bonus lazy method
 
 You can just straight up alias something like `nix run
-'github:elythh/nixvim'` to `nvim`.
+'github:shard77/nixvim'` to `nvim`.
 
 ### Bonus extend method
 
@@ -178,3 +168,4 @@ in {
 ## Credits
 
 - [yavko](https://github.com/yavko) for the logo
+- [elythh](https://github.com/elythh) for the template

@@ -40,7 +40,7 @@
     ./plug/ui/indent-blankline.nix
     ./plug/ui/noice.nix
     ./plug/ui/nvim-notify.nix
-    #./plug/ui/precognition.nix
+    ./plug/ui/precognition.nix
     ./plug/ui/telescope.nix
 
     #./plug/utils/harpoon.nix
@@ -63,7 +63,7 @@
   ];
   options = {
     theme = lib.mkOption {
-      default = lib.mkDefault "paradise";
+      default = lib.mkDefault "edge-dark";
       type = lib.types.enum [
         "paradise"
         "decay"
@@ -84,7 +84,7 @@
   };
   config = {
     # The base16 theme to use, if you want to use another theme, change it in colorscheme.nix
-    theme = "paradise";
+    theme = "edge-dark";
     extraConfigLua = ''
       _G.theme = "${config.theme}"
     '';

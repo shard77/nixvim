@@ -60,6 +60,8 @@
     ./plug/utils/whichkey.nix
     ./plug/utils/yaml-companion.nix
     ./plug/utils/rustaceanvim.nix
+    ./plug/utils/auto-session.nix
+    #./plug/utils/zellij-nav.nix
   ];
   options = {
     theme = lib.mkOption {

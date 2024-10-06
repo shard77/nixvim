@@ -59,7 +59,9 @@
     ./plug/utils/undotree.nix
     ./plug/utils/whichkey.nix
     ./plug/utils/yaml-companion.nix
+    # Utils for Rust
     ./plug/utils/rustaceanvim.nix
+    ./plug/utils/crates-nvim.nix
     ./plug/utils/auto-session.nix
     #./plug/utils/zellij-nav.nix
   ];

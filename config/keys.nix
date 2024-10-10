@@ -426,6 +426,16 @@
         desc = "Grapple Select 4";
       };
     }
+
+    # Chadtree (file explorer)
+    {
+      mode = "n";
+      key = "<leader>fe";
+      action = "<CMD>CHADopen<CR>";
+      options = {
+        desc = "File explorer";
+      };
+    }
   ];
   extraConfigLua = ''
     function ToggleLineNumber()

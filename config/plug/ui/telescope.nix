@@ -23,7 +23,7 @@
       "<leader><space>" = {
         action = "find_files";
         options = {
-          desc = "Find project files";
+          desc = "Find project files (telescope)";
         };
       };
       "<leader>/" = {

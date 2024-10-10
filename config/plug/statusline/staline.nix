@@ -36,7 +36,7 @@
       special_table = {
         lazy = { "Plugins", "💤 " },
         TelescopePrompt = { "Telescope", "  " },
-        oil = { "Oil", "󰏇 " },
+        oil = { "Chadtree", " " },
         lazygit = { "LazyGit", " " },
       },
       mode_icons = {

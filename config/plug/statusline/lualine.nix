@@ -70,7 +70,7 @@ in
       ];
       lualine_c = [
         {
-          name = "diagnostic";
+          name = "diagnostics";
           extraConfig = {
             symbols = {
               error = " ";

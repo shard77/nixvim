@@ -43,7 +43,6 @@ If you add a new configuration file, remember to add it to the
   - **[treesitter](../config/plug/treesitter/treesitter.nix):** Parser generator tool to build a syntax tree of the current buffer
 - **[ui/](../config/plug/ui)**
   - **[alpha](../config/plug/ui/alpha.nix):** Dashboard
-  - **[btw](../config/plug/ui/btw.nix):** Writes a small message as startup screen
   - **[bufferline](../config/plug/ui/bufferline.nix):** VSCode like line for buffers
   - **[noice](../config/plug/ui/noice.nix):** Better nvim UI
   - **[nvim-notify](../config/plug/ui/nvim-notify.nix):** Notification manager
@@ -54,6 +53,7 @@ If you add a new configuration file, remember to add it to the
   - **[comment-box](../config/plug/utils/comment-box.nix):** Comments utilitiesdefaul
   - **[flash](../config/plug/utils/flash.nix):** Navigate in file with a few keystrokes
   - **[grapple](../config/plug/utils/grapple.nix):** Quickly switch between buffers (Harpoon replacement)
+  - **[rustaceanvim](../config/plug/utils/rustaceanvim.nix):** Framework for Rust development
   - **[hardtime](../config/plug/utils/hardtime.nix):** Learn vim motions, the hard way
   - **[harpoon](../config/plug/utils/harpoon.nix):** Quickly switch between buffers
   - **[illuminate](../config/plug/utils/illuminate.nix):** Highlight word under the cursor
@@ -62,7 +62,7 @@ If you add a new configuration file, remember to add it to the
   - **[nvim-autopairs](../config/plug/utils/nvim-autopairs.nix):** Autopairs in nvim
   - **[nvim-colorizer](../config/plug/utils/nvim-colorizer.nix):** Preview colors in neovim
   - **[obsidian](../config/plug/utils/obsidian.nix):** Obsidian integration for nvim
-  - **[oil](../config/plug/utils/oil.nix):** Navigate in your working folder with a buffer
+  - **[chadtree](../config/plug/utils/chadtree.nix):** File explorer
   - **[ufo](../config/plug/utils/ufo.nix):** Folding plugin
   - **[undotree](../config/plug/utils/undotree.nix):** Undo history visualizer
   - **[whichkey](../config/plug/utils/whichkey.nix):** Popup to display keybindings
